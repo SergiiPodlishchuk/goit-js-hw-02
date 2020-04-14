@@ -1,15 +1,15 @@
-const formatString = function(string) {
-  // console.log(string.length);
-  // console.log(string);
+"use strict";
 
+console.log("<------task-04------>");
+
+const formatString = function (string) {
   if (string.length >= 40) {
     const stringArray = string.split("");
-    // console.log(stringArray);
     stringArray.splice(40, string.length, "...");
     const stringJoin = stringArray.join("");
-    console.log(stringJoin);
+    return stringJoin;
   } else {
-    console.log(string);
+    return string;
   }
 };
 

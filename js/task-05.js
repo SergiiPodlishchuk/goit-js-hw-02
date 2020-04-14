@@ -1,10 +1,14 @@
-const checkForSpam = function(message) {
+"use strict";
+
+console.log("<------task-05------>");
+
+const checkForSpam = function (message) {
   const messageWord = message.toLowerCase();
 
   if (messageWord.includes("spam") || messageWord.includes("sale")) {
-    console.log(true);
+    return true;
   } else {
-    console.log(false);
+    return false;
   }
 };
 
