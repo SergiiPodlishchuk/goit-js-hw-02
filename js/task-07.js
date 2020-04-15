@@ -3,35 +3,20 @@ console.log("<------task-07------>");
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
 const isLoginValid = function (login) {
-  if (login.length > 4 && login.length < 16) {
-    return true;
-  }
-  return false;
+  return login.length > 4 && login.length < 16;
 };
 
 const isLoginUnique = function (allLogins, login) {
-  if (allLogins.includes(login)) {
-    return true;
-  }
-  return false;
+  return allLogins.includes(login);
 };
 
 const addLogin = function (allLogins, login) {
-  if (
-    isLoginValid(login) === true &&
-    isLoginUnique(allLogins, login) === false
-  ) {
+  if (isLoginValid(login) && !isLoginUnique(allLogins, login)) {
     allLogins.push(login);
     console.log("Логин успешно добавлен");
-  } else if (
-    isLoginValid(login) === false &&
-    isLoginUnique(allLogins, login) === false
-  ) {
+  } else if (!isLoginValid(login) && !isLoginUnique(allLogins, login)) {
     console.log("Ошибка! Логин должен быть от 4 до 16 символов");
-  } else if (
-    isLoginValid(login) === true &&
-    isLoginUnique(allLogins, login) === true
-  ) {
+  } else if (isLoginValid(login) && isLoginUnique(allLogins, login)) {
     console.log("Такой логин уже используется!");
   }
 };
